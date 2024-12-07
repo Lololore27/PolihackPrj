@@ -15,7 +15,7 @@
                   v-for="interest in interests"
                   :key="interest"
                   class="mb-2"
-                  color="primary"
+                  color="deep-purple-accent-1"
                   text-color="white"
                   @click="filterHobbies(interest)"
                 >
@@ -40,46 +40,13 @@
               <!-- Continue Button -->
               <v-btn
                 @click="continue"
-                color="primary"
+                color="deep-purple-accent-1"
                 block
                 class="mt-4"
                 :disabled="!selectedHobby"
               >
                 Continue
               </v-btn>
-              <!-- Section for "Things others recommend" -->
-              <v-card-title class="text-h4 text-center mt-6 font-weight-bold">
-                Things others recommend
-              </v-card-title>
-              <v-list>
-                <v-list-item>
-                  <v-btn
-                    color="secondary"
-                    block
-                    @click="handleRecommendationClick('Optiunea 1')"
-                  >
-                    Optiunea 1
-                  </v-btn>
-                </v-list-item>
-                <v-list-item>
-                  <v-btn
-                    color="secondary"
-                    block
-                    @click="handleRecommendationClick('Optiunea 2')"
-                  >
-                    Optiunea 2
-                  </v-btn>
-                </v-list-item>
-                <v-list-item>
-                  <v-btn
-                    color="secondary"
-                    block
-                    @click="handleRecommendationClick('Optiunea 3')"
-                  >
-                    Optiunea 3
-                  </v-btn>
-                </v-list-item>
-              </v-list>
             </v-card-text>
           </v-card>
         </v-col>
@@ -120,11 +87,6 @@
       continue() {
         alert(`You selected the hobby: ${this.selectedHobby} under the interest: ${this.selectedInterest}`);
       },
-  
-      // Handle click event for recommendations
-      handleRecommendationClick(option) {
-        alert(`You selected: ${option}`);
-      }
     }
   };
   </script>

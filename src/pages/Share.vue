@@ -3,8 +3,8 @@
     <v-row justify="center" align="center">
       <!-- Main Card Container -->
       <v-col cols="12" md="8">
-        <v-card>
-          <v-card-title class="text-h5 text-center">Please share one thing you've done recently and you've enjoyed</v-card-title>
+        <v-card class="bg-deep-purple-lighten-2">
+          <v-card-title class="bg-deep-purple-lighten-2 text-h5 text-center">Please share one thing you've done recently and you've enjoyed</v-card-title>
 
           <v-card-text>
             <!-- Textarea for input -->
@@ -17,10 +17,10 @@
             ></v-textarea>
 
             <!-- First Send Button with space below -->
-            <v-btn @click="sendMessage" color="primary" block class="mb-12">Send</v-btn>
+            <v-btn @click="sendMessage" color="deep-purple-lighten-3" block class="mb-12" >Send</v-btn>
 
             <!-- Big Text for the question -->
-            <v-card-title class="text-h4 text-center mb-4">What would you like to do?</v-card-title>
+            <v-card-title class="bg-deep-purple-lighten-2 text-h4 text-center mb-4">What would you like to do?</v-card-title>
 
             <!-- Radio buttons for options -->
             <v-radio-group v-model="selectedOption" column>
@@ -29,7 +29,7 @@
             </v-radio-group>
 
             <!-- Send Button -->
-            <v-btn @click="sendMessage" color="primary" block>Send</v-btn>
+            <v-btn @click="sendMessage" color="deep-purple-lighten-3" block>Send</v-btn>
           </v-card-text>
         </v-card>
       </v-col>
@@ -51,7 +51,8 @@ export default {
         // Here, you can process the message and selected option, e.g., send them to an API
         alert(`Message sent: ${this.message} \nSelected Option: ${this.selectedOption}`);
         this.message = ''; // Clear the message input
-        this.selectedOption = ''; // Clear the selected option
+        this.selectedOption = ''; // Clear the selected optio
+        n
       } else {
         alert('Please fill out both the message and select an option!');
       }
