@@ -130,7 +130,7 @@
   export default {
     methods: {
       redirectToSignUp() {
-        this.$router.push(''); // Înlocuiește cu ruta paginii de înregistrare
+        this.$router.push('/Login'); // Înlocuiește cu ruta paginii de înregistrare
       },
     },
   };

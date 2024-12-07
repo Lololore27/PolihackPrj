@@ -1,9 +1,5 @@
-
 <script setup lang="ts">
 import Overview from '@/components/Overview.vue';
-import PracticeHobbyIf from '@/components/PracticeHobbyIf.vue';
-import ShareWyd from '@/components/ShareWyd.vue';
-import TrySomethingNew from '@/components/TrySomethingNew.vue';
 </script>
 
 <template>
@@ -16,15 +12,11 @@ import TrySomethingNew from '@/components/TrySomethingNew.vue';
         <v-row>
           <v-col cols="12" sm="8">
             <v-row>
-              <v-col cols="13" sm="12">
+              <v-col cols="12" sm="12">
                 <Overview></Overview>
-                <ShareWyd></ShareWyd>
-                <PracticeHobbyIf></PracticeHobbyIf>
-                <TrySomethingNew></TrySomethingNew>
               </v-col>
               <v-col cols="12" sm="12">
-               
-
+               <!--- <Money />--->
               </v-col>
               <v-col cols="12" sm="12">
                 <Payment />
@@ -38,4 +30,3 @@ import TrySomethingNew from '@/components/TrySomethingNew.vue';
       </v-container>
     </v-app>
   </template>
-
