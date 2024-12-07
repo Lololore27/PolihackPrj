@@ -1,10 +1,10 @@
 <template>
-    <v-card color="#202022" class="rounded-lg mt-2" flat>
+    <v-card color="purple-darken-1" class="rounded-lg mt-2" >
       <v-row>
         <v-col cols="12" sm="8">
           <v-toolbar color="transparent" flat class="mt-n3">
             <v-toolbar-title class="white--text">
-              Money Earned From
+              Welcome {name}
             </v-toolbar-title>
             <v-spacer></v-spacer>
             <span class="grey--text">1 Year</span>
