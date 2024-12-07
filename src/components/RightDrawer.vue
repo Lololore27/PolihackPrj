@@ -23,7 +23,7 @@
         </v-card-text>
       </v-card>
 
-...........................................................................
+<!----...........................................................................-->
 
       <v-toolbar flat color="transparent" class="mt-n2">
         <v-toolbar-title class="white--text">Chats</v-toolbar-title>

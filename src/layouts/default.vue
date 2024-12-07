@@ -1,7 +1,9 @@
 <template>
   <v-app>
+    <NavigationBar/>
     <v-main>
       <router-view />
+      
     </v-main>
 
     <AppFooter />
@@ -9,5 +11,7 @@
 </template>
 
 <script setup>
+import NavigationBar from '@/components/NavigationBar.vue';
+
   //
 </script>
