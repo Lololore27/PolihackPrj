@@ -56,13 +56,12 @@ export default defineConfig({
       '.json',
       '.jsx',
       '.mjs',
-      '.ts',
       '.tsx',
       '.vue',
     ],
   },
   server: {
-    port: 3000,
+    port: 3000
   },
   css: {
     preprocessorOptions: {
