@@ -37,8 +37,8 @@
             <!-- Link Direct pentru About -->
         <v-list-item
           link
-          title="About"
-          to="/about"
+          title="Our Comunity"
+          to="/PublicSpace"
         />
 
         <!-- Link Direct pentru Contact -->

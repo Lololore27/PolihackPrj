@@ -2,6 +2,7 @@
 import Overview from '@/components/Overview.vue';
 import PracticeHobbyIf from '@/components/PracticeHobbyIf.vue';
 import ShareWyd from '@/components/ShareWyd.vue';
+import TrySomethingNew from '@/components/TrySomethingNew.vue';
 </script>
 
 <template>
@@ -18,6 +19,7 @@ import ShareWyd from '@/components/ShareWyd.vue';
                 <Overview></Overview>
                 <ShareWyd></ShareWyd>
                 <PracticeHobbyIf></PracticeHobbyIf>
+                <TrySomethingNew></TrySomethingNew>
               </v-col>
               <v-col cols="12" sm="12">
                
