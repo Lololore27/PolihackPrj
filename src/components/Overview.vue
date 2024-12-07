@@ -1,3 +1,4 @@
+
 <template>
     <v-card color="purple-lighten-2" class="rounded-lg" flat>
       <v-row>
@@ -16,4 +17,3 @@
     data: () => ({}),
   };
   </script>
-  <style></style>

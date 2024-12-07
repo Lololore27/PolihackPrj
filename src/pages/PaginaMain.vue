@@ -1,3 +1,4 @@
+
 <script setup lang="ts">
 import Overview from '@/components/Overview.vue';
 import PracticeHobbyIf from '@/components/PracticeHobbyIf.vue';
@@ -37,3 +38,4 @@ import TrySomethingNew from '@/components/TrySomethingNew.vue';
       </v-container>
     </v-app>
   </template>
+
