@@ -108,12 +108,9 @@
   </script>
   
   <style scoped>
-  h1 {
-    color: #1976d2;
-  }
-  
-  .text-center {
-    text-align: center;
+  .text-caption {
+    font-size: 0.8rem;
+    font-weight: bold;
   }
   </style>
   
