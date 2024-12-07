@@ -149,8 +149,29 @@
           alert("Please fill out both the title and content fields.");
         }
       },
+      formValid: false,
+      rules: {
+        required: (value) => !!value || "This field is required.",
+      },
     },
-  };
+    methods: {
+     submitPost() {
+      const response = fetch("http://localhost:8080/post", {
+        body: JSON.stringify({...this.post}),
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+
+      this.dialog = false; // Close the dialog
+
+      this.post.title = "";
+      this.post.content = "";
+    }
+  }
+  }
+  
   </script>
   
   <style scoped>
@@ -171,4 +192,3 @@
     text-align: left;
   }
   </style>
-  
