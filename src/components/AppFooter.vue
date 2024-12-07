@@ -19,27 +19,20 @@
       class="text-caption text-disabled"
       style="position: absolute; right: 16px;"
     >
-      &copy; 2016-{{ (new Date()).getFullYear() }} <span class="d-none d-sm-inline-block">Vuetify, LLC</span>
-      —
-      <a
-        class="text-decoration-none on-surface"
-        href="https://vuetifyjs.com/about/licensing/"
-        rel="noopener noreferrer"
-        target="_blank"
-      >
-        MIT License
-      </a>
+      &copy; 2016-{{ (new Date()).getFullYear() }} <span class="d-none d-sm-inline-block"></span>
+    
+    
     </div>
   </v-footer>
 </template>
 
 <script setup>
   const items = [
-    {
-      title: 'Vuetify Documentation',
-      icon: `$vuetify`,
-      href: 'https://vuetifyjs.com/',
-    },
+   // {
+     // title: 'Vuetify Documentation',
+     // icon: `$vuetify`,
+    //  href: 'https://vuetifyjs.com/',
+  //  },
     {
       title: 'Vuetify Support',
       icon: 'mdi-shield-star-outline',

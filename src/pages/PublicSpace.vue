@@ -1,5 +1,6 @@
 <template>
   <v-container class="text-center my-12">
+    <h1>Your Comunity</h1>
     <!-- Main Button -->
     <v-btn color="purple-lighten-2" large @click="dialog = true">
       Post Something

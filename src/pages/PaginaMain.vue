@@ -19,12 +19,6 @@ import TrySomethingNew from '@/components/TrySomethingNew.vue';
               <v-col cols="13" sm="12">
                 <Overview></Overview>
                 <ShareWyd></ShareWyd>
-                <PracticeHobbyIf></PracticeHobbyIf>
-                <TrySomethingNew></TrySomethingNew>
-              </v-col>
-              <v-col cols="12" sm="12">
-               
-
               </v-col>
               <v-col cols="12" sm="12">
                 <Payment />
@@ -34,6 +28,8 @@ import TrySomethingNew from '@/components/TrySomethingNew.vue';
           <v-col cols="12" sm="4">
             <RightDrawer/>
           </v-col>
+          <PracticeHobbyIf></PracticeHobbyIf>
+          <TrySomethingNew></TrySomethingNew>
         </v-row>
       </v-container>
     </v-app>
