@@ -1,3 +1,7 @@
+<script setup lang="ts">
+import Overview from '@/components/Overview.vue';
+</script>
+
 <template>
     <v-app
       id="inspire"
@@ -9,10 +13,10 @@
           <v-col cols="12" sm="8">
             <v-row>
               <v-col cols="12" sm="12">
-                <Overview />
+                <Overview></Overview>
               </v-col>
               <v-col cols="12" sm="12">
-                <Money />
+               <!--- <Money />--->
               </v-col>
               <v-col cols="12" sm="12">
                 <Payment />

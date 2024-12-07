@@ -1,80 +1,10 @@
-<!-----<template>
-    <v-card>
-      <v-layout>
-        <v-app-bar
-          color="primary"
-          prominent
-        >
-          <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-  
-          <v-toolbar-title>You Can Do It!</v-toolbar-title>
-  
-          <v-spacer></v-spacer>
-  
-          <template v-if="$vuetify.display.mdAndUp">
-            <v-btn icon="mdi-magnify" variant="text"></v-btn>
-  
-            <v-btn icon="mdi-filter" variant="text"></v-btn>
-          </template>
-  
-          <v-btn icon="mdi-dots-vertical" variant="text"></v-btn>
-        </v-app-bar>
-  
-        <v-navigation-drawer
-          v-model="drawer"
-          :location="$vuetify.display.mobile ? 'bottom' : undefined"
-          temporary
-        >
-          <v-list
-            :items="items"
-          ></v-list>
-        </v-navigation-drawer>
-  
-        <v-main>
-         
-        </v-main>
-        
-      </v-layout>
-    </v-card>
-  </template>
-  <script>
-    export default {
-      data: () => ({
-        drawer: false,
-        group: null,
-        items: [
-          {
-            title: 'Foo',
-            value: 'foo',
-          },
-          {
-            title: 'Bar',
-            value: 'bar',
-          },
-          {
-            title: 'Fizz',
-            value: 'fizz',
-          },
-          {
-            title: 'Buzz',
-            value: 'buzz',
-          },
-        ],
-      }),
-  
-      watch: {
-        group () {
-          this.drawer = false
-        },
-      },
-    }
-  </script> --->
+
   
   <template>
     <div>
       <!-- Bara de navigare -->
       <v-app-bar
-        color="primary"
+        color="purple-darken-2"
         prominent
         absolute
       >
@@ -84,11 +14,10 @@
         <v-spacer></v-spacer>
   
         <template v-if="$vuetify.display.mdAndUp">
-          <v-btn icon="mdi-magnify" variant="text"></v-btn>
-          <v-btn icon="mdi-filter" variant="text"></v-btn>
+      
         </template>
   
-        <v-btn icon="mdi-dots-vertical" variant="text"></v-btn>
+
       </v-app-bar>
   
       <!-- Drawer -->
@@ -98,7 +27,29 @@
         absolute
         temporary
       >
-        <v-list :items="items"></v-list>
+      <v-list dense>
+        <!-- Link Direct pentru Home -->
+        <v-list-item
+          link
+          title="Home"
+          to="PaginaMain"
+        />
+            <!-- Link Direct pentru About -->
+        <v-list-item
+          link
+          title="About"
+          to="/about"
+        />
+
+        <!-- Link Direct pentru Contact -->
+        <v-list-item
+          link
+          to="/MySpace"
+        >
+          <v-list-item-title>My Space </v-list-item-title>
+        </v-list-item>
+      </v-list>
+
       </v-navigation-drawer>
     </div>
   </template>

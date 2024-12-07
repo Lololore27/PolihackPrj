@@ -3,7 +3,7 @@
       <!-- HEADER -->
       <v-row class="text-center mb-6">
         <v-col cols="12">
-          <v-sheet rounded="xl" elevation="3" class="pa-6" color="purple-lighten-1">
+          <v-sheet rounded="xl" elevation="3" class="pa-6" color="purple-lighten-3">
             <h1 class="display-1 font-weight-bold text-white">My Space</h1>
             <p class="text-h6">
               "Iesi din zona de confort și explorează noi pasiuni!"
