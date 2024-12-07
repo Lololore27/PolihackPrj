@@ -13,7 +13,7 @@
         :key="index"
         class="my-4"
         outlined
-        style="border: 2px solid #6200ea; text-align: left;"
+        style="border: 2px solid #6200ea; text-align: left"
       >
         <v-card-title>{{ post.title }}</v-card-title>
         <v-card-text>{{ post.content }}</v-card-text>
@@ -21,7 +21,7 @@
           <span
             v-for="(tag, i) in post.tags"
             :key="i"
-            style="margin-right: 8px; color: #6200ea; font-weight: bold;"
+            style="margin-right: 8px; color: #6200ea; font-weight: bold"
           >
             #{{ tag }}
           </span>
@@ -33,11 +33,7 @@
     <v-dialog v-model="dialog" max-width="800px">
       <v-card>
         <!-- Toolbar -->
-        <v-toolbar
-          color="purple-lighten-2"
-          dark
-          flat
-        >
+        <v-toolbar color="purple-lighten-2" dark flat>
           <v-toolbar-title>Submit a Post</v-toolbar-title>
         </v-toolbar>
 
@@ -64,20 +60,14 @@
             <v-divider class="my-2"></v-divider>
 
             <!-- Tags -->
-            <v-item-group
-              multiple
-              selected-class="bg-purple"
-            >
+            <v-item-group multiple selected-class="bg-purple">
               <div class="text-caption mb-2">Tags</div>
               <v-item
                 v-for="tag in tags"
                 :key="tag"
                 v-slot="{ selectedClass, toggle }"
               >
-                <v-chip
-                  :class="selectedClass"
-                  @click="toggleTag(tag)"
-                >
+                <v-chip :class="selectedClass" @click="toggleTag(tag)">
                   {{ tag }}
                 </v-chip>
               </v-item>
@@ -88,13 +78,7 @@
         <!-- Actions -->
         <v-divider></v-divider>
         <v-card-actions>
-          <v-btn
-            color="success"
-            large
-            @click="addNewPost"
-          >
-            Post
-          </v-btn>
+          <v-btn color="success" large @click="addNewPost"> Post </v-btn>
           <v-btn text color="grey" class="ml-auto" @click="dialog = false">
             Cancel
           </v-btn>
@@ -105,10 +89,14 @@
 </template>
 
 <script>
+import { onMounted } from "vue";
+
 export default {
   data() {
     return {
       dialog: false,
+      URL: "http://localhost:8080/post",
+      respo: null,
       feed: [], // Array to store posts
       newPost: {
         title: "",
@@ -116,12 +104,25 @@ export default {
         tags: [],
       },
       selectedTags: [], // Array to hold selected tag strings
-      tags: ["Technology", "Health", "Science", "Education", "Sports", "Travel", "Food", "Lifestyle"], // Available tags
+      tags: [
+        "Technology",
+        "Health",
+        "Science",
+        "Education",
+        "Sports",
+        "Travel",
+        "Food",
+        "Lifestyle",
+      ], // Available tags
       formValid: false,
       rules: {
         required: (value) => !!value || "This field is required.",
       },
     };
+  },
+  mounted() {
+    // Run function after component is mounted (element is in DOM)
+    this.getPosted();
   },
   methods: {
     toggleTag(tag) {
@@ -133,7 +134,7 @@ export default {
         this.selectedTags.splice(index, 1);
       }
     },
-    addNewPost() {
+    async addNewPost() {
       // Add a new post to the feed
       if (this.newPost.title && this.newPost.content) {
         this.feed.unshift({
@@ -141,6 +142,22 @@ export default {
           content: this.newPost.content,
           tags: [...this.selectedTags], // Add selected tags
         });
+        try {
+          const response = await fetch(this.URL, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body:JSON.stringify({
+              title: this.newPost.title,
+              content: this.newPost.content,
+              tags: [...this.selectedTags]
+            })
+          });
+          console.log(response);
+        } catch (err) {
+          alert(err);
+        }
         // Reset the form and close the dialog
         this.newPost.title = "";
         this.newPost.content = "";
@@ -148,6 +165,25 @@ export default {
         this.dialog = false;
       } else {
         alert("Please fill out both the title and content fields.");
+      }
+    },
+    async getPosted() {
+      try {
+        // POST request to the API endpoint
+        const response = await fetch(this.URL, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        this.respo = await response.json();
+        console.log(this.respo);
+
+        this.respo.newest_results.forEach((item) => {
+          this.feed.push(item);
+        });
+      } catch (err) {
+        alert(err);
       }
     },
   },
