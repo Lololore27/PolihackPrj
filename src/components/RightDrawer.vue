@@ -1,7 +1,7 @@
 <template>
     <v-card color="#202022" class="rounded-lg mt-n3 pb-1" flat>
       <v-toolbar flat color="transparent">
-        <v-toolbar-title class="white--text mt-n2">Your Cards</v-toolbar-title>
+        <v-toolbar-title class="white--text mt-n2">Leaderboard</v-toolbar-title>
       </v-toolbar>
       <v-card
         color="purple-lighten-2"
@@ -18,12 +18,10 @@
   
         <h2 class="white--text ml-4">$4.799,85</h2>
   
-        <v-card-text class="pt-0 mt-4">
-          <span class="white--text font-weight-light">**** **** **** 6774</span>
-        </v-card-text>
+      
       </v-card>
 
-<!----...........................................................................-->
+<!----........................................................................
 
       <v-toolbar flat color="transparent" class="mt-n2">
         <v-toolbar-title class="white--text">Chats</v-toolbar-title>
@@ -49,9 +47,10 @@
             <h5 class="white--text">{{ chat.date }}</h5>
           </v-list-item-action>
         </v-list-item>
-      </v-list>
+      </v-list>-->
+      
       <v-card
-        color="#242426"
+        color="Purple-lighten-2"
         class="rounded-lg mx-2 pa-1 mt-n3 gradient flip"
         flat
       >
@@ -66,8 +65,9 @@
           <v-btn color="#524EED" dark class="withoutupercase mt-2"
             >Trial from $199</v-btn
           >
-        </v-card-text>
-      </v-card>
+        </v-card-text>...
+       </v-card>
+       
     </v-card>
   </template>
   
@@ -107,12 +107,7 @@
       rgba(52, 36, 69, 1) 100%
     );
   }
-  .flip {
-    transform-style: preserve-3d;
-    transition: all 0.8s ease;
-  }
   
-  .flip:hover {
-    transform: rotateY(180deg);
-  }
-  </style>
+  
+
+  </style> 
