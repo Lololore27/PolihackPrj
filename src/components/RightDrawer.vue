@@ -35,9 +35,10 @@
         <span class="grey--text ml-4 caption">begins by carrying away small stones.”</span>
   
         <v-card-text class="pt-0 mt-5">
-          <v-btn color="#524EED" dark class="withoutupercase mt-2"
+          <router-link to="/MySpace">
+          <v-btn color="#524EED" dark class="withoutupercase mt-2" 
             >Check your points</v-btn
-          >
+          ></router-link>
         </v-card-text>...
        </v-card>
        
