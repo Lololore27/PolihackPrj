@@ -33,8 +33,8 @@ function doSomething(newOption) {
             <RightDrawer/>
           </v-col>
           <PracticeHobbyIf v-if="option === 'option_one'"></PracticeHobbyIf>
-          <TrySomethingNew v-if="false"></TrySomethingNew>
-          <AskCosticaAi></AskCosticaAi>
+          <TrySomethingNew v-if="option === 'option_two'"></TrySomethingNew>
+          <AskCosticaAi v-if="option === 'option_three'"></AskCosticaAi>
 
         </v-row>
       </v-container>
