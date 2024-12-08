@@ -143,7 +143,39 @@
       ],
     }),
   }
-</script>
+
+  import { ref } from 'vue';
+  
+  // Hobby-uri
+  const hobbies = ref([
+    { title: "Pictură", description: "Exploră-ți creativitatea cu un set de culori acrilice." },
+    { title: "Drumeții", description: "Descoperă trasee uimitoare în natură." },
+    { title: "Fotografie", description: "Captură momente unice și împărtășește frumusețea lor." },
+  ]);
+  
+  // Progres
+  const progress = ref(60); // procentajul progresului completat
+  
+  // Activități noi
+  const activities = ref([
+    "Înscrie-te la un curs de dans.",
+    "Citește o carte într-un domeniu nou.",
+    "Încearcă un sport extrem.",
+  ]);
+  
+  // Funcții
+  const startChallenge = (hobby) => {
+    alert(`Ai început hobby-ul: ${hobby.title}`);
+  };
+  
+  const addNewChallenge = () => {
+    const newActivity = prompt("Introdu o nouă activitate:");
+    if (newActivity) activities.value.push(newActivity);
+  };
+  </script>
+
+
+
   <!----<script setup>
   import { ref } from 'vue';
   
