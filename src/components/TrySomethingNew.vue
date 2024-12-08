@@ -12,27 +12,27 @@
                   <v-btn
                     color="deep-purple-accent-1"
                     block
-                    @click="handleRecommendationClick('Optiunea 1')"
+                    @click="handleRecommendationClick(1)"
                   >
-                    Optiunea 1
+                    {{ opt1 }}
                   </v-btn>
                 </v-list-item>
                 <v-list-item>
                   <v-btn
                     color="deep-purple-accent-1"
                     block
-                    @click="handleRecommendationClick('Optiunea 2')"
+                    @click="handleRecommendationClick(2)"
                   >
-                    Optiunea 2
+                  {{ opt2 }}
                   </v-btn>
                 </v-list-item>
                 <v-list-item>
                   <v-btn
                     color="deep-purple-accent-1"
                     block
-                    @click="handleRecommendationClick('Optiunea 3')"
+                    @click="handleRecommendationClick(3)"
                   >
-                    Optiunea 3
+                  {{ opt3 }}
                   </v-btn>
                 </v-list-item>
               </v-list>
@@ -45,14 +45,58 @@
   export default {
     data() {
       return {
+        URLQ: "http://localhost:8080/users/tasked",
+        URLP: "http://localhost:8080/users/points",
+        opt1: null,
+        opt2: null,
+        opt3: null ,
+        respo: null,
+        finalopt: null,
+      }
+    },
+
+    mounted() {
+    // Run function after component is mounted (element is in DOM)
+    this.getPosted();
+    },
 
     methods: {
       // Handle click event for recommendations
-      handleRecommendationClick(option) {
-        alert(`You selected: ${option}`);
+      async getPosted() {
+      try {
+        // POST request to the API endpoint
+        const response = await fetch(this.URLQ, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
+        this.respo = await response.json(); console.log(this.respo)
+        this.opt1=this.respo.un;this.opt2=this.respo.doi;this.opt3=this.respo.tri;
+      } catch (err) {
+        alert(err);
       }
-    }
-  };}}
+    },
+
+     async handleRecommendationClick(option) {
+        try {
+          const response = await fetch(this.URLP, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body:{
+              "username":"Raul",
+              "points": option
+            }
+          })
+        }catch (err){
+          alert(err)
+        }
+        console.log(response.json())
+      },
+    },
+    };
   </script>
   
   <style scoped>
