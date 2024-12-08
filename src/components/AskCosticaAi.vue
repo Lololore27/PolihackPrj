@@ -1,67 +1,70 @@
 <template>
-    
-    <v-form>
-    <v-container>
-      <v-row>
-        <v-col cols="12">
-          <v-text-field
-            v-model="message"
-            :append-icon="message ? 'mdi-send' : 'mdi-microphone'"
-            :prepend-icon="icon"
-            clear-icon="mdi-close-circle"
-            label="Message"
-            type="text"
-            variant="filled"
-            clearable
-            @click:append="sendMessage"
-            @click:append-inner="toggleMarker"
-            @click:clear="clearMessage"
-            @click:prepend="changeIcon"
-          ></v-text-field>
-        </v-col>
-      </v-row>
-    </v-container>
-  </v-form>
+  <v-container>
+    <div align="center">
+      <h2>Costica.Ai</h2>
+      <form @submit.prevent="handleSubmit">
+        <div>
+          <label for="prompt">Prompt: </label>
+          <input type="text" id="prompt" v-model="prompt" required />
+        </div>
+        <h2>{{ costica }}</h2>
+        <button type="submit" @click="sendMessage()">Submit</button><br />
+        <button @click="this.$router.push({path:'/PublicSpace'})">FORUM</button>
+      </form>
+    </div>
+  </v-container>
+</template>
 
-    <v-card
-        class="mt-4"
-        outlined
-        max-width="400"
-      >
-        <v-card-text>
-          Acesta este cardul cu un mesaj de exemplu.
-        </v-card-text>
-      </v-card>
+<script>
+export default {
+  data() {
+    return {
+      marker: false,
+      prompt: null,
+      icon: "mdi-email",
+      URL: "http://localhost:8080/ai",
+      costica: null,
+      respo: null,
+    };
+  },
+  methods: {
+    async sendMessage() {
+      console.log(this.prompt);
+      try {
+        // POST request to the API endpoint
+        const response = await fetch(this.URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            prompt: this.prompt,
+          }),
+        });
+        const body = await response.json();
+        console.log("wtf", body);
 
-  </template>
-  <script>
-  export default {
-    data() {
-      return {
-        message: '',
-        marker: false,
-        icon: 'mdi-email',
-      };
+        this.costica = body.choices[0].message.content
+        console.log(this.costica)
+      } catch (err) {
+        alert(err);
+      }
     },
-    methods: {
-      sendMessage() {
-        console.log('Trimite mesaj:', this.message);
-      },
-      toggleMarker() {
-        this.marker = !this.marker;
-      },
-      clearMessage() {
-        this.message = '';
-      },
-      changeIcon() {
-        this.icon = this.icon === 'mdi-email' ? 'mdi-account' : 'mdi-email';
-      },
+    toggleMarker() {
+      this.marker = !this.marker;
     },
-  };
-  </script>
-  
-  <style>
-  .fill-height {
-    height: 100vh;
-  }
-  </style>
+    clearMessage() {
+      this.message = "";
+    },
+    changeIcon() {
+      this.icon = this.icon === "mdi-email" ? "mdi-account" : "mdi-email";
+    },
+  },
+};
+</script>
+
+<style>
+.fill-height {
+  height: 100vh;
+}
+</style>

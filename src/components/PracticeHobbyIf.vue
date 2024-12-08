@@ -39,11 +39,10 @@
   
               <!-- Continue Button -->
               <v-btn
-                @click="continue"
+                @click="this.$router.push({path:'/PublicSpace'})"
                 color="deep-purple-accent-1"
                 block
                 class="mt-4"
-                :disabled="!selectedHobby"
               >
                 Continue
               </v-btn>
