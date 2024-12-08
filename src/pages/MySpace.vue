@@ -112,7 +112,7 @@
       <!-- LISTĂ DE ACTIVITĂȚI -->
       <v-row class="mt-8">
         <v-col cols="12">
-          <h2 class="text-h5 font-weight-bold">Try activities</h2>
+          <h2 class="text-h5 font-weight-bold">My activities</h2>
         </v-col>
         <v-col cols="12">
           <v-list>
@@ -133,7 +133,7 @@
         block
         @click="addNewChallenge"
       >
-      Send a feedback
+      Add an activity
       </v-btn>
     </v-container>
   </template>
