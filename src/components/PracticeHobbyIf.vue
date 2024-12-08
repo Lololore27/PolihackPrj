@@ -85,7 +85,7 @@
   
       // Handle continue button click
       continue() {
-        alert(`You selected the hobby: ${this.selectedHobby} under the interest: ${this.selectedInterest}`);
+        this.$router.push({path: "/PublicSpace"})
       },
     }
   };

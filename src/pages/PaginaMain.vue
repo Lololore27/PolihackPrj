@@ -1,5 +1,13 @@
 <script setup lang="ts">
 import Overview from '@/components/Overview.vue';
+import { computed, ref } from 'vue';
+
+const option = ref("option_one");
+
+function doSomething(newOption) {
+  option.value = newOption;
+}
+
 </script>
 
 <template>
@@ -13,7 +21,7 @@ import Overview from '@/components/Overview.vue';
             <v-row>
               <v-col cols="12" sm="12">
                 <Overview></Overview>
-                <ShareWyd></ShareWyd>
+                <ShareWyd @option-changed="doSomething"></ShareWyd>
               </v-col>
               <v-col cols="12" sm="12">
                 <Payment />
@@ -23,8 +31,8 @@ import Overview from '@/components/Overview.vue';
           <v-col cols="12" sm="4">
             <RightDrawer/>
           </v-col>
-          <PracticeHobbyIf></PracticeHobbyIf>
-          <TrySomethingNew></TrySomethingNew>
+          <PracticeHobbyIf v-if="option === 'option_one'"></PracticeHobbyIf>
+          <TrySomethingNew v-else></TrySomethingNew>
         </v-row>
       </v-container>
     </v-app>

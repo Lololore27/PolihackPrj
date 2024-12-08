@@ -52,6 +52,7 @@
         opt3: null ,
         respo: null,
         finalopt: null,
+        response: null,
       }
     },
 
@@ -80,7 +81,7 @@
 
      async handleRecommendationClick(option) {
         try {
-          const response = await fetch(this.URLP, {
+           this.response = await fetch(this.URLP, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -93,7 +94,8 @@
         }catch (err){
           alert(err)
         }
-        console.log(response.json())
+        console.log(this.response.json())
+        this.$router.push({path: "/PublicSpace"})
       },
     },
     };

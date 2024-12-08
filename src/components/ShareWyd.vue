@@ -54,6 +54,11 @@ export default {
       selectedOption: "", // Holds the selected radio option
     };
   },
+  watch: {
+    selectedOption(newSelectedOption) {
+      this.$emit("option-changed", this.selectedOption);
+    }
+  },
   methods: {
     async sendMessage() {
       if (this.message.trim() && this.selectedOption) {
