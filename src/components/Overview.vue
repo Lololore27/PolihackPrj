@@ -1,6 +1,6 @@
 
 <template>
-    <v-card color="purple-lighten-2" class="rounded-lg" flat>
+    <v-card color="grey-lighten-2" >
       <v-row>
         <v-col cols="12" sm="4">
           <v-card color="transparent" class="rounded-lg mx-2" flat>

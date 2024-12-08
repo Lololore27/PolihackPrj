@@ -1,69 +1,42 @@
 <template>
-    <v-card color="#202022" class="rounded-lg mt-n3 pb-1" flat>
+    <v-card class="rounded-lg mt-n2 pb-1" >
       <v-toolbar flat color="transparent">
-        <v-toolbar-title class="white--text mt-n2">Leaderboard</v-toolbar-title>
       </v-toolbar>
       <v-card
         color="purple-lighten-2"
         class="rounded-lg mx-2 pa-1 mt-n3 gradient flip"
         flat
       >
-        <v-toolbar flat color="transparent">
-           <v-toolbar-title class="grey--text caption">
-            We know you can do it!
-           </v-toolbar-title>
-       </v-toolbar>
-  
-         <span class="grey--text mt-3 ml-4 caption">Balance </span>
-  
-        <h2 class="white--text ml-4">$4.799,85</h2>
-  
-      
-      </v-card>
-
-<!----........................................................................
-
-      <v-toolbar flat color="transparent" class="mt-n2">
-        <v-toolbar-title class="white--text">Chats</v-toolbar-title>
-        <v-chip color="green" text-color="white" class="ml-2">2</v-chip>
-      </v-toolbar>
-  
-      <v-list class="mt-n6" color="transparent" dense>
-        <v-list-item v-for="chat in chats" :key="chat.title">
-          <v-list-item-avatar>
-            <v-img :src="chat.img" />
-          </v-list-item-avatar>
+      <v-card-title class="text-h6">Leaderboard</v-card-title>
+      <v-divider></v-divider>
+      <v-list style="background: transparent">
+        <v-list-item v-for="(player, index) in sortedPlayers" :key="index">
           <v-list-item-content>
-            <v-list-item-title
-              v-text="chat.title"
-              class="white--text"
-            ></v-list-item-title>
-            <v-list-item-subtitle
-              v-text="chat.subtitle"
-              class="grey--text"
-            ></v-list-item-subtitle>
+            <v-list-item-title>{{ index + 1 }}. {{ player.name }}</v-list-item-title>
           </v-list-item-content>
           <v-list-item-action>
-            <h5 class="white--text">{{ chat.date }}</h5>
+            <span>{{ player.points }} Pts</span>
           </v-list-item-action>
         </v-list-item>
-      </v-list>-->
-      
+      </v-list>
+        
+      </v-card>
+     
+           
       <v-card
-        color="Purple-lighten-2"
-        class="rounded-lg mx-2 pa-1 mt-n3 gradient flip"
+        class="rounded-lg mx-2 mt-1 gradient flip"
         flat
-      >
-        <h2 class="white--text ml-4">Premium Kit</h2>
+      >  
+        <h2 class="white--text ml-4">Don't get discoureged</h2>
   
         <span class="grey--text mt-4 ml-4 caption"
-          >Get out about our new Item</span
+          >“The man who moves a mountain </span
         ><br />
-        <span class="grey--text ml-4 caption">for community </span>
+        <span class="grey--text ml-4 caption">begins by carrying away small stones.”</span>
   
         <v-card-text class="pt-0 mt-5">
           <v-btn color="#524EED" dark class="withoutupercase mt-2"
-            >Trial from $199</v-btn
+            >Check your points</v-btn
           >
         </v-card-text>...
        </v-card>
@@ -73,29 +46,22 @@
   
   <script>
   export default {
-    data: () => ({
-      chats: [
-        {
-          img: "https://cdn.vuetifyjs.com/images/lists/2.jpg",
-          subtitle: "Allright then, see you later !",
-          title: "Esther Howard",
-          date: "12/06/03",
-        },
-        {
-          img: "https://cdn.vuetifyjs.com/images/lists/3.jpg",
-          subtitle: "Allright then, see you later ! ",
-          title: "Floyd Miles",
-          date: "12/06/03",
-        },
-        {
-          img: "https://cdn.vuetifyjs.com/images/lists/4.jpg",
-          subtitle: "Allright then, see you later ! ",
-          title: "Brooklyn Simmons",
-          date: "12/06/03",
-        },
+  data() {
+    return {
+      players: [
+        { name: "Alice", points: 100 },
+        { name: "Bob", points: 160 },
+        { name: "Charlie", points: 200 },
       ],
-    }),
-  };
+    };
+  },
+  computed: {
+    sortedPlayers() {
+      // Sort players by points in descending order
+      return [...this.players].sort((a, b) => b.points - a.points);
+    },
+  },
+};
   </script>
 
   <style>
@@ -103,8 +69,8 @@
     background: rgb(63, 94, 251);
     background: radial-gradient(
       circle,
-      rgba(63, 94, 251, 1) 0%,
-      rgba(52, 36, 69, 1) 100%
+      rgb(152, 118, 194) 0%,
+      rgb(141, 70, 217) 100%
     );
   }
   

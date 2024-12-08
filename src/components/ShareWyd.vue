@@ -21,7 +21,7 @@
               <v-btn @click="sendMessage" color="deep-purple-lighten-3" block class="mb-12" >Send</v-btn>
   
               <!-- Big Text for the question -->
-              <v-card-title class="bg-deep-purple-lighten-2 text-h4 text-center mb-4">What would you like to do?</v-card-title>
+              <v-card-title class="bg-deep-purple-lighten-2 text-h4 text-center mb-4">What would you <br> like to do?</v-card-title>
   
               <!-- Radio buttons for options -->
               <v-radio-group v-model="selectedOption" column>
