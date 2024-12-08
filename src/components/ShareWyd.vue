@@ -8,8 +8,8 @@
             >Please share one thing you've <br />
             done recently and you've enjoyed</v-card-title
           >
-
           <v-card-text>
+            
             <!-- Textarea for input -->
             <v-textarea
               v-model="message"
@@ -21,7 +21,7 @@
 
             <!-- Big Text for the question -->
             <v-card-title
-              class="bg-deep-purple-lighten-2 text-h4 text-center mb-4"
+              class="bg-deep-purple-lighten-2 text-h5 text-center mb-4"
               >What would you like to do?</v-card-title
             >
 
@@ -32,6 +32,10 @@
                 value="option_one"
               ></v-radio>
               <v-radio label="Try something new" value="option_two"></v-radio>
+              <v-radio
+                label="Ask CosticaAi for ideas"
+                value="option_three "
+              ></v-radio>
             </v-radio-group>
 
             <!-- Send Button -->
