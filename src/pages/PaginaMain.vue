@@ -6,7 +6,6 @@ import Overview from '@/components/Overview.vue';
     <v-app
       id="inspire"
     >
-      <SideBar />
       <v-container>
         <Navbar />
         <v-row>

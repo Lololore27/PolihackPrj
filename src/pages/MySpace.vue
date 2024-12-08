@@ -31,6 +31,48 @@
           </v-card>
         </v-col>
       </v-row>
+      
+      <!--GRAFIC-->
+      <v-row>
+        <v-col cols="12">
+          <h2 class="text-h5 font-weight-bold">Here are your points</h2>
+        </v-col>
+    
+        <!-- Card pentru un hobby -->
+        <v-col cols="12" sm="6" md="4" >
+          <v-card
+    class="mx-auto text-center"
+    color="deep-purple-lighten-4"
+    max-width="600"
+    dark
+  >
+    <v-card-text>
+      <v-sheet color="deep-purple-lighten-1">
+        <v-sparkline
+          :model-value="value"
+          color="rgba(255, 255, 255, .7)"
+          height="100"
+          padding="24"
+          stroke-linecap="round"
+          smooth
+        >
+          <template v-slot:label="item">
+            ${{ item.value }}
+          </template>
+        </v-sparkline>
+      </v-sheet>
+    </v-card-text>
+
+    <v-card-text>
+      <div class="text-h4 font-weight-thin">
+        Points achieved !
+      </div>
+    </v-card-text>
+
+  
+  </v-card>
+        </v-col>
+      </v-row>
   
       <!-- PROGRESUL PERSONAL -->
       <v-row class="mt-8">
@@ -76,7 +118,33 @@
     </v-container>
   </template>
   
-  <script setup>
+  <script>
+  export default {
+    data: () => ({
+      labels: [
+        '12am',
+        '3am',
+        '6am',
+        '9am',
+        '12pm',
+        '3pm',
+        '6pm',
+        '9pm',
+      ],
+      value: [
+        200,
+        675,
+        410,
+        390,
+        310,
+        460,
+        250,
+        240,
+      ],
+    }),
+  }
+</script>
+  <!----<script setup>
   import { ref } from 'vue';
   
   // Hobby-uri
@@ -105,7 +173,7 @@
     const newActivity = prompt("Introdu o nouă activitate:");
     if (newActivity) activities.value.push(newActivity);
   };
-  </script>
+  </script>-->
   
   <style scoped>
   .text-caption {
