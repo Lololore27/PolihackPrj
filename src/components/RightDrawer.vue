@@ -27,7 +27,7 @@
         class="rounded-lg mx-2 mt-1 gradient flip"
         flat
       >  
-        <h2 class="white--text ml-4">Don't get discoureged</h2>
+        <h2 class="white--text ml-4">Don't get discouraged</h2>
   
         <span class="grey--text mt-4 ml-4 caption"
           >“The man who moves a mountain </span
@@ -50,9 +50,12 @@
   data() {
     return {
       players: [
-        { name: "Alice", points: 100 },
+        { name: "Raul", points: 2864 },
         { name: "Bob", points: 160 },
-        { name: "Charlie", points: 200 },
+        { name: "Lore", points: 250 },
+         { name: "Mekky", points: 180},
+         {  name: "Lari", points: 350},
+        
       ],
     };
   },
@@ -70,7 +73,7 @@
     background: rgb(63, 94, 251);
     background: radial-gradient(
       circle,
-      rgb(152, 118, 194) 0%,
+      rgb(193, 162, 232) 0%,
       rgb(141, 70, 217) 100%
     );
   }

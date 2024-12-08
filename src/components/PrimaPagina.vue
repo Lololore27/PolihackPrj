@@ -12,12 +12,12 @@
   
           <!-- Text peste imagine -->
           <div class="overlay-text">
-            <h1 class="display-1 font-weight-bold black--text">
+            <h1 class="display-1 font-weight-bold text-black">
               Step Out of Your Comfort Zone
             </h1>
-            <p class="subtitle-1 text--black">
+            <h4 class="text-black">
               Discover hobbies, track your progress, and find the motivation to grow every day.
-            </p>
+            </h4>
           </div>
         </v-sheet>
       </v-container>

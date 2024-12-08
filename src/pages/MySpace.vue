@@ -79,7 +79,7 @@
       >
         <v-card-text>
           <v-sheet color="deep-purple-lighten-1">
-            <h1>2000 pts</h1>
+            <h1>2864 pts</h1>
           </v-sheet>
         </v-card-text>
 
@@ -92,68 +92,7 @@
     </v-col>
   </v-row>
 
-      <!--GRAFIC
-      <v-row>
-        <v-col cols="12">
-          <h2 class="text-h5 font-weight-bold">Here are your points</h2>
-        </v-col>
   
-        <v-col cols="12" sm="6" md="4" >
-          <v-card
-    class="mx-auto text-center"
-    color="deep-purple-lighten-4"
-    max-width="600"
-    dark
-  >
-    <v-card-text>
-      <v-sheet color="deep-purple-lighten-1">
-        <v-sparkline
-          :model-value="value"
-          color="rgba(255, 255, 255, .7)"
-          height="100"
-          padding="24"
-          stroke-linecap="round"
-          smooth
-        >
-          <template v-slot:label="item">
-            {{ day }} {{ item.value }}
-          </template>
-        </v-sparkline>
-
-      </v-sheet>
-    </v-card-text>
-
-    <v-card-text>
-      <div class="text-h4 font-weight-thin">
-        Points achieved <br> this week
-      </div>
-    </v-card-text>
-  </v-card>
-
-  <v-card
-    class="mx-auto text-center"
-    color="deep-purple-lighten-4"
-    max-width="600"
-    dark
-  >
-    <v-card-text>
-      <v-sheet color="deep-purple-lighten-1">
-       <h1>2000 pts</h1>
-        
-      </v-sheet>
-    </v-card-text>
-
-    <v-card-text>
-      <div class="text-h4 font-weight-thin">
-        Total of points 
-      </div>
-    </v-card-text>
-
-  
-  </v-card>
-
-        </v-col>
-      </v-row>-->
   
       <!-- PROGRESUL PERSONAL -->
       <v-row class="mt-8">

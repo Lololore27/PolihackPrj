@@ -1,4 +1,4 @@
-<template>
+<!---<template>
     <v-card color="purple-darken-1" class="rounded-lg mt-2" >
       <v-row>
         <v-col cols="12" sm="8">
@@ -212,5 +212,5 @@
       Scatter,
     },
   };
-  </script>
+  </script> --->
   
