@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import AskCosticaAi from '@/components/AskCosticaAi.vue';
 import Overview from '@/components/Overview.vue';
 import { computed, ref } from 'vue';
 
@@ -32,7 +33,9 @@ function doSomething(newOption) {
             <RightDrawer/>
           </v-col>
           <PracticeHobbyIf v-if="option === 'option_one'"></PracticeHobbyIf>
-          <TrySomethingNew v-else></TrySomethingNew>
+          <TrySomethingNew v-if="false"></TrySomethingNew>
+          <AskCosticaAi></AskCosticaAi>
+
         </v-row>
       </v-container>
     </v-app>
