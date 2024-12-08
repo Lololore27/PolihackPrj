@@ -34,7 +34,7 @@
               <v-radio label="Try something new" value="option_two"></v-radio>
               <v-radio
                 label="Ask CosticaAi for ideas"
-                value="option_three "
+                value="option_three"
               ></v-radio>
             </v-radio-group>
 
